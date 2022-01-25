@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  font-size: 62.5%;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+  background-image: url(../image/ba.jpg);
+  background-size: cover;
+}
+
+ul li {
+  list-style: none;
+}
+
+.btn {
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: cadetblue;
+  margin: 8px 0;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Patrick Hand', cursive;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 25px;
+  padding: 5px;
+}
+
+img {
+  width: 100%;
+  text-align: center;
+}
+
+.startGame {
+  display: block;
+  width: 100%;
+  height: 425px;
+}
+
+.startGame .play-btn {
+  font-size: 50px;
+  background-color: #0A608D;
+  padding: 20px;
+}
+
+.container {
+  display: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.container .left {
+  height: 500px;
+}
+
+.container .left .header {
+  padding-bottom: 100px;
+  font-family: cursive;
+}
+
+.container .left .score-panel {
+  font-size: 25px;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+
+.container .left .score-panel .step-counter {
+  padding: 8px;
+}
+
+.container .left .score-panel .timer {
+  background-color: white;
+  color: black;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.container .left .score-panel .restart-btn {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.container .memory-table {
+  background-color: white;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  padding: 10px;
+  width: 525px;
+  height: 525px;
+}
+
+.container .memory-table .card,
+.container .memory-table .reset-btn {
+  cursor: pointer;
+}
+
+.container .memory-table .card {
+  background-image: url(../image/card-blue.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  height: 90px;
+  width: 90px;
+}
+
+.container .memory-table img {
+  visibility: hidden;
+  height: 100%;
+}
+
+.container .memory-table .flip {
+  cursor: default;
+  pointer-events: none;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+  background-image: none;
+}
+
+.container .memory-table .flip img {
+  border: 1px solid #198ece;
+  border-radius: 10px;
+  visibility: visible;
+}
+
+.container .memory-table .match {
+  visibility: visible;
+  cursor: default;
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+}
+
+.container .memory-table .match img {
+  background-color: white;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.model {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.model .model-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin: 5% auto;
+  width: 80%;
+}
+
+.model .model-content .close {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: crimson;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.model .model-content p.info {
+  font-weight: 600;
+}
+
+.model .model-content p.info:last-child {
+  margin-bottom: 1em;
+}
+
+.model .model-content .play-again-btn {
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="startGame">
+        <div class="title-img" style="width: 100%; height: 300px;">
+            <img src="image/title1.1.png" alt="" style="width: 80%;">
+
+        </div>
+        <button class="btn play-btn"><i class="fas fa-play" style="padding-right: 10px;"></i>Play</button>
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <header class="header" style="width: 700px; height: 100px;">
+                <img src="image/title2.1.png" alt="" style="width: 100%;">
+            </header>
+            <div class="score-panel">
+                <h3>Score table</h3>
+                <span class="step-counter">0 </span>steps
+
+                <div class="timer">
+                    <p><i class="fa fa-hourglass-start">    Timer  =  <span class="minute">00</span>:<span class="second">00</span></i></p>
+                </div>
+                <div class="max-score">
+                    <p>Max Score is <span class="maxScore">0</span></p>
+                </div>
+                <div class="restart">
+                    <button class="btn restart-btn"><i class="fa fa-repeat" style="padding-right: 10px;"></i>Restart </button>
+                </div>
+            </div>
+        </div>
+
+        <ul class="memory-table">
+        </ul>
+    </div>
+
+    <div class="finish-game">
+        <div id="model" class="model">
+            <div class="model-content">
+                <span class="close">&times;</span>
+                <h2>Congratulations!!!</h2>
+                <div class="score-info"></div>
+                <button class="btn play-again-btn"><i class="fas fa-redo" style="padding-right: 10px;"></i>Play again?</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
