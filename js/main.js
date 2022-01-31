@@ -22,6 +22,8 @@ var time;
 var minutes = 00;
 var seconds = 00;
 var timeStart = false;
+var score = 0;
+var maxscore = 0;
 
 function shuffle(arr) {
     var currentIndex = arr.length,
@@ -83,6 +85,13 @@ function timer() {
 
         }
     }, 1000);
+}
+
+function MaxScoreCal() {
+    score = Math.round((30 / (minutes * 60 + seconds) + 10 / steps) * 100);
+
+    if (score > maxscore) { maxscore = score; }
+
 }
 
 function stopTime() {
@@ -155,9 +164,8 @@ function AddScoreInfo() {
     let p = scoreInfo.querySelectorAll("p.info");
     p[0].innerHTML = "You finished the game in " + steps + " steps";
     p[1].innerHTML = "in " + minutes + " minutes " + seconds + " seconds.";
-    p[2].innerHTML = "Your score is " + (minutes * 60 + seconds + steps) + "!";
-    MaxScore.innerHTML = minutes * 60 + seconds + steps;
-
+    p[2].innerHTML = "Your score is " + score + "!";
+    MaxScore.innerHTML = maxscore;
 
 }
 
@@ -179,6 +187,7 @@ function displayModel() {
 function winGame() {
     if (matched.length == 20) {
         stopTime();
+        MaxScoreCal();
         AddScoreInfo();
         displayModel();
     }
